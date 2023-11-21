@@ -5,6 +5,7 @@ import Tokens from "./components/Tokens.jsx"
 import Swap from "./components/Swap.jsx";
 import { useConnect, useAccount } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import Warning from "./components/Warning.jsx";
 
 function App() {
   const { address, isConnected } = useAccount();
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <div className="App">
+        <Warning/>
         <Header connect={connect} isConnected={isConnected} address={address} />
         <div className="mainWindow">
           <Routes>
